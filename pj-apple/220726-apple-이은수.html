@@ -15,14 +15,26 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      overflow-x: hidden;
-      overflow-y: auto;
+      
     }
 
+    header {
+      display: flex;
+      justify-content: center;
+
+    }
+
+
     ul {
+      width: 55vw;
+      height: 100%;
       margin: 0;
       padding: 0;
       list-style: none;
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
     }
 
     /* 구성 */
@@ -30,18 +42,15 @@
     header {
 
       width: 100vw;
-      height: 43.99px;
-      background-color: #1d1d1f;
+      height: 48px;
+      background-color: #323233;
       text-align: center;
     }
 
     /* 메뉴리스트 배열 */
     ul li {
-      display: inline-block;
+
       color: white;
-      margin-left: 16px;
-      margin-right: 16px;
-      margin-top: 1em;
       font-size: 12px;
 
 
@@ -55,20 +64,18 @@
     }
 
     /* 안내 */
-    .information-line {
-      height: 46.22px;
-      background-color: #f5f5f7;
-      text-align: center;
 
+    .information-container {
+      height: 46.22px;
+      width: 100vw;
+      background-color: #f5f5f7;
+      font-size: 13px
     }
 
-    .text-center {
-      display: inline-block;
-      height: inherit;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-top: 12px;
-      padding-bottom: 12px;
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .text-center a {
@@ -94,7 +101,6 @@
 
     .item-width {
       width: 100%;
-      border: solid 1px black;
       box-sizing: border-box;
 
     }
@@ -114,23 +120,48 @@
       gap: 15px;
     }
 
+    .section-padding {
+      padding: 13px;
+    }
 
 
     /* footer 부분 */
     footer {
       height: 571.55px;
-      background-color: #f5f5f7
+      display: flex;
+      justify-content: center;
+      background-color: #f5f5f7;
+      font-size: 12px;
     }
 
-
-    .footer-box {
-      display: inline-block;
-      width: 50vw;
+    .sectionbar-box {
       height: 86.55px;
+      padding-top: 17px;
+      padding-bottom: 11px;
+      box-sizing: border-box;
+    }
+
+    .footer-section {
+      width: 60vw;
+
+    }
+
+    div li {
+      list-style: none;
     }
 
     .footer-menu {
       list-style: none;
+      display: flex;
+      justify-content: space-between
+    }
+
+    .footer-menu-line {
+      line-height: 28px;
+    }
+
+    .footer-menu-width {
+      width: 20%
     }
   </style>
 </head>
@@ -159,7 +190,7 @@
     </header>
     <main>
       <!-- 맨위 안내문 -->
-      <div class="information-line">
+      <div class="information-container flex-center">
         <span class="text-center">
           <a href="#">온라인으로 쇼핑</a>하고 무료배송, 스페셜리스트 지원 등의 혜택을 받으세요.
         </span>
@@ -173,7 +204,7 @@
 
         </div>
         <!-- 아래부터 섹션이 두개로 나눠짐 -->
-        <div class="section section-display">
+        <div class="section section-display section-padding">
           <section class="item-width item-height"><img src="applewatch.PNG" alt="애플워치"></section>
           <section class="item-width item-height"><img src="macbookpro.PNG" alt="맥북프로"></section>
           <section class="item-width item-height"><img src="ipadair.PNG" alt="아이패드 에어"></section>
@@ -186,17 +217,18 @@
     <footer>
       <div class="footer-section">
         <!-- 약관정보 -->
-        <section>
+        <section class="sectionbar-box">
           <div>
             <li>무료 체험 기간이 끝나면 월 6,500원에 이용할 수 있습니다. 본인 또는 가족 구성원이 구입한 기기 수에 상관없이, 무료 체험 혜택은 Apple ID당 한 번 또는 본인이 '가족공유'
               그룹의 구성원일 경우 그룹당 한 번만 제공됩니다. 본인 또는 가족 구성원이 이미 Apple TV+ 3개월 무료 체험 혜택을 이용한 경우에는 이 혜택을 이용할 수 없습니다. 무료 체험 혜택은
               적용 대상 기기 활성화 이후 3개월 안에 신청할 수 있습니다. 멤버십은 매월 자동으로 갱신되며, 해지 시 종료됩니다. 특정 제한 사항 및 기타 약관이 적용됩니다.</li>
           </div>
         </section>
+        <hr>
         <!-- 정보메뉴 -->
         <section>
-          <nav class="footer-menu">
-            <div class="footer-first-menu">
+          <nav class="footer-menu footer-menu-line">
+            <div class="footer-1st-menu footer-menu-width">
               <li>
                 <h3>쇼핑 및 알아보기</h3>
               </li>
@@ -210,7 +242,7 @@
               <li>AirTag</li>
               <li>액세서리</li>
             </div>
-            <div>
+            <div class="footer-2nd-menu footer-menu-width">
               <li>
                 <h3>서비스</h3>
               </li>
@@ -229,23 +261,68 @@
               <li>iCloud.com</iCloud>
               </li>
             </div>
-            <div>
-
-              <h3>Apple Store</h3>
+            <div class="footer-3rd-menu footer-menu-width">
+              <li>
+                <h3>Apple Store</h3>
+              </li>
+              <li>매장찾기</li>
+              <li>Genius Bar</li>
+              <li>Today at Apple</li>
+              <li>Apple 캠프</li>
+              <li>Apple Store 앱</li>
+              <li>리퍼 및 특가 제품</li>
+              <li>금융 혜택</li>
+              <li>Apple Trade In</li>
+              <li>주문 상태</li>
+              <li>쇼핑 도움말</li>
             </div>
-            <div>
-              <h3>비즈니스</h3>
+            <div class="footer-4th-menu footer-menu-width">
+              <li>
+                <h3>비즈니스</h3>
+              </li>
+              <li>Apple과 비즈니스</li>
+              <li>비즈니스를 위한 제품 쇼핑하기</li>
+              <li>
+                <h3>교육</h3>
+              </li>
+              <li>Apple과 교육</li>
+              <li>초중고용 제품 쇼핑하기</li>
+              <li>대학 생활을 위한 제품 쇼핑하기</li>
             </div>
-            <div>
-              <h3>Apple의 가치관</h3>
+            <div class="footer-5th-menu footer-menu-width">
+              <li>
+                <h3>Apple의 가치관</h3>
+              </li>
+              <li>손쉬운 사용</li>
+              <li>환경</li>
+              <li>개인정보 보호</li>
+              <li>협력업체에 대한 책임</li>
+              <li>
+                <h3>Apple 정보</h3>
+              </li>
+              <li>Newsroom</li>
+              <li>Apple 리더십</li>
+              <li>채용 안내</li>
+              <li>윤리 및 규정 준수</li>
+              <li>이벤트</li>
+              <li>일자리 창출</li>
+              <li>Apple 연락처</li>
             </div>
           </nav>
         </section>
         <!-- 사업자정보 -->
         <section>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="business-info">
+            <div></div>
+            <div></div>
+            <div>
+              <p>
+                <span>사업자등록번호 : 120-81-84429 </span>
+
+
+            </p>
+          </div>
+          </div>
         </section>
       </div>
     </footer>
